@@ -1,4 +1,4 @@
-import { Search, MessageSquare, BarChart, Shield, Zap, Globe } from 'lucide-react'
+import { Search, MessageSquare, Zap, BarChart, Shield, Globe } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface NavItem {
@@ -56,8 +56,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'ConvoFlow',
-  tagline: 'Validate your SaaS idea with real human conversations, not AI guesswork',
-  description: 'AI-powered validation engine that helps founders discover audiences, have real conversations, and get confidence-scored verdicts.',
+  tagline: 'Validate your SaaS idea with real human conversations, not assumptions',
+  description: 'AI-powered validation engine that guides founders from idea to go/no-go verdict using real human conversations.',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   company: 'ConvoFlow',
 
@@ -65,12 +65,13 @@ export const siteConfig: SiteConfig = {
     { title: 'Features', href: '/features' },
     { title: 'Pricing', href: '/pricing' },
     { title: 'How It Works', href: '/features#how-it-works' },
-    { title: 'FAQ', href: '/pricing#faq' }
+    { title: 'Blog', href: '/blog' }
   ],
 
   dashboardNav: [
     { title: 'Dashboard', href: '/dashboard' },
     { title: 'Projects', href: '/dashboard/entities' },
+    { title: 'Reports', href: '/dashboard/reports' },
     { title: 'Settings', href: '/dashboard/settings' }
   ],
 
@@ -78,47 +79,47 @@ export const siteConfig: SiteConfig = {
     badge: 'Stop building things nobody wants',
     headline: 'Validate Your SaaS Idea with Real Human Conversations',
     headlineHighlight: 'Real Human Conversations',
-    subheadline: 'ConvoFlow replaces guesswork and synthetic AI research with a structured 4-step workflow. Discover where your audience lives online, get platform-native conversation templates, paste back messy responses, and receive an AI-powered validation verdict with confidence scoring — all in 48 hours.',
+    subheadline: 'ConvoFlow guides you from idea to validated go/no-go verdict in 4 steps. Discover where your audience hangs out, get platform-specific conversation templates, paste in real responses, and let AI analyze everything into a confidence-scored validation verdict. No more guesswork. No more synthetic research.',
     primaryCta: { text: 'Start Validating Free', href: '/register' },
-    secondaryCta: { text: 'See How It Works', href: '/features' },
-    socialProof: { text: 'Trusted by 500+ indie hackers and founders', rating: '4.9/5' },
+    secondaryCta: { text: 'See How It Works', href: '/features#how-it-works' },
+    socialProof: { text: 'Trusted by 1,200+ indie hackers and founders', rating: '4.9/5' },
   },
 
   features: [
     {
       icon: Search,
-      title: 'Channel Discovery Engine',
-      description: 'Instantly find the exact subreddits, Discord servers, X communities, and Indie Hackers groups where your target audience is most active — complete with subscriber counts and activity levels.',
+      title: 'Audience Channel Discovery',
+      description: 'AI identifies the exact subreddits, X communities, Discord servers, and Indie Hackers groups where your target audience is most active — with subscriber counts and engagement scores.',
       gradient: 'from-violet-500 to-purple-500',
     },
     {
       icon: MessageSquare,
-      title: 'Platform-Native Templates',
-      description: 'Get conversation starters and discussion prompts tailored to each platform\'s culture. Reddit posts that feel genuine, X threads that provoke engagement, Discord messages that fit the vibe.',
+      title: 'Platform-Specific Templates',
+      description: 'Get conversation templates tailored to each platform\'s culture and norms. No more getting flagged for spam on Reddit or ignored on Discord.',
       gradient: 'from-blue-500 to-cyan-500',
-    },
-    {
-      icon: BarChart,
-      title: 'Cross-Channel Pattern Detection',
-      description: 'Paste responses from multiple channels and our AI identifies signals that hold across communities (high confidence) vs. single-source noise (low confidence) — dramatically more trustworthy than gut feel.',
-      gradient: 'from-emerald-500 to-teal-500',
-    },
-    {
-      icon: Shield,
-      title: 'Validation Verdict & Confidence Score',
-      description: 'Get a structured 0-100 validation score, pain intensity rating, willingness-to-pay range, key risk factors, and a clear go/pivot/kill recommendation backed by real human data.',
-      gradient: 'from-amber-500 to-orange-500',
     },
     {
       icon: Zap,
       title: 'Opus-Powered Deep Analysis',
-      description: 'Claude Opus analyzes all your collected responses together — extracting pain levels, buying signals, key verbatim quotes, and contradictions that you\'d miss reading through manually.',
+      description: 'Paste in messy conversation threads from any platform. Claude Opus extracts pain levels, willingness to pay, key quotes, and detects cross-channel patterns automatically.',
+      gradient: 'from-amber-500 to-orange-500',
+    },
+    {
+      icon: BarChart,
+      title: 'Confidence-Scored Verdicts',
+      description: 'Get a clear go, weak signal, or no-go verdict with a confidence score — not just raw data. Finally translate messy human feedback into a build decision.',
+      gradient: 'from-emerald-500 to-green-500',
+    },
+    {
+      icon: Shield,
+      title: 'Anti-Confirmation Bias',
+      description: 'Our AI is designed to be brutally honest. It flags contradictions, highlights negative signals you might overlook, and tells you when your idea needs work.',
       gradient: 'from-rose-500 to-pink-500',
     },
     {
       icon: Globe,
       title: 'Shareable Validation Reports',
-      description: 'Generate polished reports with key quotes, pattern analysis, and confidence scores. Share with co-founders, early investors, or accelerator applications via a single link.',
+      description: 'Generate professional validation reports you can share with co-founders, advisors, or investors. Export to PDF, Notion, or Google Docs with one click.',
       gradient: 'from-indigo-500 to-violet-500',
     }
   ],
@@ -127,7 +128,7 @@ export const siteConfig: SiteConfig = {
     { name: 'Next.js', color: 'bg-black text-white' },
     { name: 'Supabase', color: 'bg-emerald-600 text-white' },
     { name: 'Stripe', color: 'bg-purple-600 text-white' },
-    { name: 'Claude AI', color: 'bg-orange-600 text-white' },
+    { name: 'Claude AI', color: 'bg-amber-600 text-white' },
     { name: 'Tailwind CSS', color: 'bg-sky-600 text-white' }
   ],
 
@@ -138,7 +139,7 @@ export const siteConfig: SiteConfig = {
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
         { title: 'How It Works', href: '/features#how-it-works' },
-        { title: 'Changelog', href: '/changelog' }
+        { title: 'Changelog', href: '/blog' }
       ],
     },
     {

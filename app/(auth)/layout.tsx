@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Rocket } from 'lucide-react'
+import { siteConfig } from '@/config/site'
 
 export default function AuthLayout({
   children,
@@ -20,7 +21,7 @@ export default function AuthLayout({
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 shadow-lg shadow-violet-500/25">
               <Rocket className="h-5 w-5 text-white" />
             </div>
-            Saasify
+            {siteConfig.name}
           </Link>
         </div>
         <div className="w-full max-w-md px-4">{children}</div>

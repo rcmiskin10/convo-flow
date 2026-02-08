@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Rocket } from 'lucide-react'
+import { siteConfig } from '@/config/site'
 
 export default function MarketingLayout({
   children,
@@ -16,28 +17,19 @@ export default function MarketingLayout({
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600">
               <Rocket className="h-4 w-4 text-white" />
             </div>
-            Saasify
+            {siteConfig.name}
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
-            <Link
-              href="/features"
-              className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-            >
-              Features
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/deploy"
-              className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-            >
-              Deploy
-            </Link>
+            {siteConfig.mainNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+              >
+                {item.title}
+              </Link>
+            ))}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -68,82 +60,37 @@ export default function MarketingLayout({
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600">
                   <Rocket className="h-4 w-4 text-white" />
                 </div>
-                Saasify
+                {siteConfig.name}
               </Link>
               <p className="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-                The AI-powered SaaS boilerplate for launching your product faster.
+                {siteConfig.description}
               </p>
             </div>
 
-            {/* Product */}
-            <div>
-              <h4 className="text-sm font-semibold text-neutral-900 dark:text-white">Product</h4>
-              <ul className="mt-4 space-y-3">
-                <li>
-                  <Link href="/features" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/deploy" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
-                    Deploy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h4 className="text-sm font-semibold text-neutral-900 dark:text-white">Resources</h4>
-              <ul className="mt-4 space-y-3">
-                <li>
-                  <Link href="/docs" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h4 className="text-sm font-semibold text-neutral-900 dark:text-white">Legal</h4>
-              <ul className="mt-4 space-y-3">
-                <li>
-                  <Link href="/privacy" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
-                    Terms
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Footer sections from config */}
+            {siteConfig.footerSections.map((section) => (
+              <div key={section.title}>
+                <h4 className="text-sm font-semibold text-neutral-900 dark:text-white">{section.title}</h4>
+                <ul className="mt-4 space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           {/* Bottom */}
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-200 pt-8 dark:border-neutral-800 md:flex-row">
             <p className="text-sm text-neutral-500 dark:text-neutral-400">
-              &copy; {new Date().getFullYear()} Saasify. All rights reserved.
+              {siteConfig.footerCopyright}
             </p>
             <p className="text-sm text-neutral-500 dark:text-neutral-400">
-              Built with Next.js 16, React 19, Supabase, Stripe, and Claude AI.
+              Built with Next.js, React, Supabase, and Stripe.
             </p>
           </div>
         </div>

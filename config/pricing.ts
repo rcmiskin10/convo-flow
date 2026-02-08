@@ -24,6 +24,8 @@ export const pricingConfig: {
   model: 'freemium',
 
   defaultLimits: {
+    channels: 2,
+    conversations: 5,
     entities: 1
   },
 
@@ -31,65 +33,70 @@ export const pricingConfig: {
     {
       id: 'free',
       name: 'Free',
-      description: 'Try the full workflow on one project with basic AI analysis',
+      description: 'Experience the full validation workflow on one project',
       price: { monthly: 0 },
       limits: {
+        channels: 2,
+        conversations: 5,
         entities: 1
       },
       features: [
-        '1 validation project',
-        'Channel discovery for 2 platforms',
-        'Basic conversation templates',
-        'Up to 10 pasted responses',
-        'Sonnet-powered simplified analysis',
-        'Basic validation summary'
+        '1 active project',
+        'Up to 5 conversation threads',
+        'Basic AI analysis (Haiku-powered)',
+        'Channel discovery for Reddit + 1 platform',
+        'Basic validation summary',
+        'Community support'
       ],
       cta: 'Get Started Free',
     },
     {
       id: 'pro',
       name: 'Pro',
-      description: 'Full validation power for serious founders',
+      description: 'Full-power validation for serious founders',
       price: { monthly: 29, yearly: 249 },
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
+        channels: -1,
+        conversations: -1,
         entities: -1
       },
       features: [
         'Unlimited projects',
-        'Channel discovery across all platforms',
-        'Opus-powered deep analysis',
+        'Unlimited conversation thread imports',
+        'Claude Opus-powered deep analysis',
+        'Confidence-scored validation verdicts',
+        'Full channel discovery across all platforms',
         'Cross-channel pattern detection',
-        'Full confidence scoring & verdicts',
-        'Unlimited response ingestion',
-        'Bulk thread import & CSV upload',
+        'Willingness-to-pay extraction',
         'Shareable validation reports',
+        'Export to PDF, Notion, Google Docs',
         'Historical project comparison',
-        'Priority analysis queue'
+        'Priority email support'
       ],
       highlighted: true,
       cta: 'Start Pro — 7 Day Free Trial',
     },
     {
-      id: 'team',
-      name: 'Team',
-      description: 'Collaborative validation for startup teams',
-      price: { monthly: 79, yearly: 690 },
-      priceId: process.env.STRIPE_PRICE_TEAM,
+      id: 'lifetime',
+      name: 'Lifetime',
+      description: 'One-time payment, forever access — limited to 500 seats',
+      price: { monthly: 249 },
+      priceId: process.env.STRIPE_PRICE_LIFETIME,
       limits: {
+        channels: -1,
+        conversations: -1,
         entities: -1
       },
       features: [
-        'Everything in Pro',
-        'Up to 5 team members',
-        'Shared project workspace',
-        'Custom analysis frameworks',
-        'White-labeled reports',
-        'API access',
-        'Priority support',
-        'Team activity dashboard'
+        'Everything in Pro, forever',
+        'Unlimited projects & analyses',
+        'All future features included',
+        'Early access to new capabilities',
+        'Founding member badge',
+        'Direct founder access via Discord'
       ],
-      cta: 'Contact Us',
+      cta: 'Grab Lifetime Deal',
     }
   ],
 }

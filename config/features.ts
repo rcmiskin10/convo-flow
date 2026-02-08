@@ -35,7 +35,7 @@ export const featuresConfig: FeaturesConfig = {
   entitySearch: true,
   fileUploads: false,
   landingGenerator: false,
-  marketResearch: false,
+  marketResearch: true,
   notifications: true,
   socialListening: false,
   teams: false,

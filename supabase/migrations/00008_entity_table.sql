@@ -9,13 +9,12 @@ CREATE TABLE IF NOT EXISTS public.entities (
   project_name TEXT NOT NULL,
   saas_idea_description TEXT NOT NULL,
   target_audience TEXT[] NOT NULL,
-  status TEXT NOT NULL DEFAULT 'Idea Submitted',
-  channels_identified TEXT,
-  research_responses TEXT,
+  validation_stage TEXT NOT NULL DEFAULT 'Idea Submitted',
   validation_verdict TEXT,
   confidence_score INTEGER,
-  response_count INTEGER,
-  report_url TEXT,
+  responses_collected INTEGER,
+  key_assumptions TEXT,
+  created_at TIMESTAMPTZ NOT NULL,
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -24,7 +23,7 @@ CREATE TABLE IF NOT EXISTS public.entities (
 
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_entities_user_id ON public.entities(user_id);
-CREATE INDEX IF NOT EXISTS idx_entities_status ON public.entities(status);
+
 CREATE INDEX IF NOT EXISTS idx_entities_created_at ON public.entities(created_at DESC);
 
 -- Auto-update updated_at trigger

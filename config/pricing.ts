@@ -31,19 +31,18 @@ export const pricingConfig: {
     {
       id: 'free',
       name: 'Free',
-      description: 'Experience the full validation workflow once',
+      description: 'Try the full workflow on one project with basic AI analysis',
       price: { monthly: 0 },
       limits: {
         entities: 1
       },
       features: [
-        '1 active project',
+        '1 validation project',
         'Channel discovery for 2 platforms',
-        '3 AI-generated outreach templates',
+        'Basic conversation templates',
         'Up to 10 pasted responses',
-        'Basic analysis (Claude Sonnet)',
-        'Simple validation summary',
-        'No confidence scoring'
+        'Sonnet-powered simplified analysis',
+        'Basic validation summary'
       ],
       cta: 'Get Started Free',
     },
@@ -58,16 +57,15 @@ export const pricingConfig: {
       },
       features: [
         'Unlimited projects',
-        'All platforms (Reddit, X, Discord, IH, FB, LinkedIn)',
-        'Unlimited outreach templates',
-        'Unlimited response analysis',
-        'Claude Opus-powered deep analysis',
+        'Channel discovery across all platforms',
+        'Opus-powered deep analysis',
         'Cross-channel pattern detection',
-        'Confidence-scored validation verdicts',
+        'Full confidence scoring & verdicts',
+        'Unlimited response ingestion',
+        'Bulk thread import & CSV upload',
         'Shareable validation reports',
-        'Bulk thread/conversation import',
-        'Export to PDF, Notion, Google Docs',
-        'Validation history & project comparison'
+        'Historical project comparison',
+        'Priority analysis queue'
       ],
       highlighted: true,
       cta: 'Start Pro — 7 Day Free Trial',
@@ -75,7 +73,7 @@ export const pricingConfig: {
     {
       id: 'team',
       name: 'Team',
-      description: 'For product teams and validation consultants',
+      description: 'Collaborative validation for startup teams',
       price: { monthly: 79, yearly: 690 },
       priceId: process.env.STRIPE_PRICE_TEAM,
       limits: {
@@ -84,12 +82,12 @@ export const pricingConfig: {
       features: [
         'Everything in Pro',
         'Up to 5 team members',
-        'Team collaboration & comments',
-        'White-label validation reports',
+        'Shared project workspace',
+        'Custom analysis frameworks',
+        'White-labeled reports',
         'API access',
-        'Priority Opus processing',
-        'Dedicated onboarding call',
-        'Custom report branding'
+        'Priority support',
+        'Team activity dashboard'
       ],
       cta: 'Contact Us',
     }

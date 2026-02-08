@@ -1,4 +1,4 @@
-import { Search, MessageSquare, FileText, BarChart, Shield, Globe } from 'lucide-react'
+import { Search, MessageSquare, Zap, BarChart, Globe, FileText } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface NavItem {
@@ -56,8 +56,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'ConvoFlow',
-  tagline: 'Stop guessing. Start validating with real human conversations.',
-  description: 'AI-powered validation engine that helps founders have real conversations and extract honest market signal.',
+  tagline: 'Validate your SaaS idea with real human conversations, not AI guesswork',
+  description: 'A conversational research engine that turns real customer conversations into confidence-scored validation verdicts.',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   company: 'ConvoFlow',
 
@@ -72,54 +72,54 @@ export const siteConfig: SiteConfig = {
     { title: 'Dashboard', href: '/dashboard' },
     { title: 'Projects', href: '/dashboard/entities' },
     { title: 'Templates', href: '/dashboard/templates' },
-    { title: 'Reports', href: '/dashboard/reports' }
+    { title: 'Settings', href: '/dashboard/settings' }
   ],
 
   hero: {
-    badge: 'Real signal from real humans',
-    headline: 'Stop Asking AI What Humans Think',
-    headlineHighlight: 'What Humans Think',
-    subheadline: 'ConvoFlow guides you to have real conversations with real potential customers across Reddit, Discord, and X — then uses AI to honestly synthesize every response into a calibrated validation verdict with confidence scoring. No more fake validation. No more building things nobody wants.',
-    primaryCta: { text: 'Validate Your Idea Free', href: '/register' },
-    secondaryCta: { text: 'See How It Works', href: '/features#how-it-works' },
-    socialProof: { text: 'Trusted by 500+ indie hackers and founders', rating: '4.8/5' },
+    badge: 'Stop building things nobody wants',
+    headline: 'Validate Your SaaS Idea with Real Human Signal',
+    headlineHighlight: 'Real Human Signal',
+    subheadline: 'ConvoFlow guides you from idea to validation verdict in 4 steps. Discover where your audience hangs out, get platform-specific conversation templates, paste the messy responses back, and get a confidence-scored go/no-go decision powered by AI analysis of real conversations — not web data hallucinations.',
+    primaryCta: { text: 'Start Validating Free', href: '/register' },
+    secondaryCta: { text: 'See How It Works', href: '/features' },
+    socialProof: { text: 'Trusted by 1,200+ indie hackers and founders', rating: '4.9/5' },
   },
 
   features: [
     {
       icon: Search,
       title: 'Smart Channel Discovery',
-      description: 'AI finds the exact subreddits, Discord servers, X communities, and Indie Hackers groups where your target audience actually hangs out — with subscriber counts and activity levels.',
+      description: 'AI finds the exact subreddits, Discord servers, X communities, and Indie Hackers groups where your target audience is active — with real subscriber counts and activity levels.',
       gradient: 'from-violet-500 to-purple-500',
     },
     {
       icon: MessageSquare,
-      title: 'Platform-Native Templates',
-      description: 'Get copy-paste-ready outreach messages optimized for each platform\'s culture. Reddit value-first format, Discord casual tone, X hook-driven threads — all mod-safe and engagement-optimized.',
+      title: 'Platform-Aware Templates',
+      description: 'Get outreach templates optimized for each platform\'s culture. Reddit\'s anti-promo norms, X\'s thread format, Discord\'s conversational tone — all handled automatically.',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: FileText,
-      title: 'Paste & Analyze Responses',
-      description: 'Dump messy Reddit DMs, Discord messages, and tweet replies into one place. Our AI handles threaded conversations, multiple respondents, and chaotic formatting effortlessly.',
-      gradient: 'from-emerald-500 to-teal-500',
-    },
-    {
-      icon: BarChart,
-      title: 'Honest Validation Verdicts',
-      description: 'Get a calibrated go/no-go verdict with confidence scoring, pain-level analysis, willingness-to-pay extraction, and explicit sample size caveats. No sugarcoating.',
+      icon: Zap,
+      title: 'Opus-Powered Analysis',
+      description: 'Paste messy conversation responses and let Claude Opus extract pain levels, willingness-to-pay signals, key quotes, and cross-channel patterns from real human feedback.',
       gradient: 'from-amber-500 to-orange-500',
     },
     {
-      icon: Shield,
-      title: 'Anti-Confirmation Bias',
-      description: 'ConvoFlow flags when respondents are fellow founders vs. actual target users, highlights negative signals you might dismiss, and shows the bear case alongside the bull case.',
-      gradient: 'from-rose-500 to-pink-500',
+      icon: BarChart,
+      title: 'Confidence-Scored Verdicts',
+      description: 'Get a clear go, cautious go, no-go, or insufficient data verdict with explicit confidence scoring — not vague AI opinions, but a structured decision framework.',
+      gradient: 'from-emerald-500 to-green-500',
     },
     {
       icon: Globe,
+      title: 'Cross-Channel Pattern Detection',
+      description: 'When the same pain point surfaces on Reddit AND Discord AND X, ConvoFlow spots it. Triangulate signals across channels for validation you can trust.',
+      gradient: 'from-rose-500 to-pink-500',
+    },
+    {
+      icon: FileText,
       title: 'Shareable Validation Reports',
-      description: 'Generate polished, data-backed reports with methodology transparency. Share with co-founders, investors, or accelerator applications via web link or PDF export.',
+      description: 'Generate investor-ready reports with key quotes, pain scoring, WTP analysis, and channel breakdowns. Turn scattered conversations into a credible artifact.',
       gradient: 'from-indigo-500 to-violet-500',
     }
   ],
@@ -139,7 +139,7 @@ export const siteConfig: SiteConfig = {
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
         { title: 'How It Works', href: '/features#how-it-works' },
-        { title: 'Changelog', href: '/changelog' }
+        { title: 'Changelog', href: '/blog' }
       ],
     },
     {
@@ -154,8 +154,7 @@ export const siteConfig: SiteConfig = {
       title: 'Legal',
       links: [
         { title: 'Privacy Policy', href: '/privacy' },
-        { title: 'Terms of Service', href: '/terms' },
-        { title: 'Cookie Policy', href: '/cookies' }
+        { title: 'Terms of Service', href: '/terms' }
       ],
     }
   ],

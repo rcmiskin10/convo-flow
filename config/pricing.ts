@@ -24,8 +24,7 @@ export const pricingConfig: {
   model: 'freemium',
 
   defaultLimits: {
-    entities: 1,
-    responses: 5
+    entities: 1
   },
 
   plans: [
@@ -35,44 +34,43 @@ export const pricingConfig: {
       description: 'Experience the full validation workflow once',
       price: { monthly: 0 },
       limits: {
-        entities: 1,
-        responses: 5
+        entities: 1
       },
       features: [
-        '1 validation project',
+        '1 active project',
         'Channel discovery for 2 platforms',
-        '3 AI outreach templates',
-        'Basic analysis of up to 5 responses',
-        'Powered by Claude Sonnet',
-        'Community support'
+        '3 AI-generated outreach templates',
+        'Up to 10 pasted responses',
+        'Basic analysis (Claude Sonnet)',
+        'Simple validation summary',
+        'No confidence scoring'
       ],
       cta: 'Get Started Free',
     },
     {
       id: 'pro',
       name: 'Pro',
-      description: 'Unlimited validation with deep AI analysis',
+      description: 'Full validation power for serious founders',
       price: { monthly: 29, yearly: 249 },
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
-        entities: -1,
-        responses: -1
+        entities: -1
       },
       features: [
         'Unlimited projects',
-        'All platform channel discovery',
-        'Unlimited AI outreach templates with A/B variants',
-        'Opus-powered deep analysis — unlimited responses',
+        'All platforms (Reddit, X, Discord, IH, FB, LinkedIn)',
+        'Unlimited outreach templates',
+        'Unlimited response analysis',
+        'Claude Opus-powered deep analysis',
         'Cross-channel pattern detection',
-        'Confidence scoring with calibrated verdicts',
-        'Anti-confirmation-bias flagging',
-        'Shareable validation reports (PDF + web link)',
+        'Confidence-scored validation verdicts',
+        'Shareable validation reports',
         'Bulk thread/conversation import',
-        'Historical project archive with search',
-        'Priority email support'
+        'Export to PDF, Notion, Google Docs',
+        'Validation history & project comparison'
       ],
       highlighted: true,
-      cta: 'Start Pro — $29/mo',
+      cta: 'Start Pro — 7 Day Free Trial',
     },
     {
       id: 'team',
@@ -81,20 +79,19 @@ export const pricingConfig: {
       price: { monthly: 79, yearly: 690 },
       priceId: process.env.STRIPE_PRICE_TEAM,
       limits: {
-        entities: -1,
-        responses: -1
+        entities: -1
       },
       features: [
         'Everything in Pro',
-        'Team collaboration (up to 5 members)',
-        'Client-facing branded reports',
+        'Up to 5 team members',
+        'Team collaboration & comments',
+        'White-label validation reports',
         'API access',
-        'Custom report templates',
-        'Priority analysis queue',
+        'Priority Opus processing',
         'Dedicated onboarding call',
-        'Slack support channel'
+        'Custom report branding'
       ],
-      cta: 'Start Team Plan',
+      cta: 'Contact Us',
     }
   ],
 }

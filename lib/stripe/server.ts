@@ -1,11 +1,24 @@
 import Stripe from 'stripe'
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing STRIPE_SECRET_KEY environment variable')
+let _stripe: Stripe | null = null
+
+function getStripe(): Stripe {
+  if (!_stripe) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error('Missing STRIPE_SECRET_KEY environment variable')
+    }
+    _stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      typescript: true,
+    })
+  }
+  return _stripe
 }
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  typescript: true,
+/** @deprecated Use getStripe() instead — kept for backward compat */
+export const stripe = new Proxy({} as Stripe, {
+  get(_, prop) {
+    return (getStripe() as any)[prop]
+  },
 })
 
 export async function createCustomer(email: string, name?: string): Promise<string> {

@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'ConvoFlow - Stop guessing. Start validating with real human conversations.',
-  description: 'AI-powered validation engine that helps founders have real conversations and extract honest market signal.',
+  title: 'ConvoFlow - Validate your SaaS idea with real human conversations, not AI guesswork',
+  description: 'A conversational research engine that turns real customer conversations into confidence-scored validation verdicts.',
 };
 
 export default function RootLayout({

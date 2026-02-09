@@ -8,15 +8,16 @@ CREATE TABLE IF NOT EXISTS public.entities (
   -- Project fields
   project_name TEXT NOT NULL,
   saas_idea_description TEXT NOT NULL,
-  target_audience TEXT[] NOT NULL,
-  validation_stage TEXT NOT NULL DEFAULT 'Idea Input',
+  target_audience TEXT NOT NULL,
+  validation_status TEXT NOT NULL DEFAULT 'idea_described',
   validation_verdict TEXT DEFAULT 'Pending',
   confidence_score INTEGER,
-  conversations_collected INTEGER,
   channels_discovered TEXT[],
-  key_insights TEXT,
+  responses_collected INTEGER,
+  raw_responses TEXT,
+  analysis_report TEXT,
   report_url TEXT,
-  created_at TIMESTAMPTZ NOT NULL,
+  created_date TIMESTAMPTZ NOT NULL,
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),

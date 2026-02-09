@@ -1,4 +1,4 @@
-import { Search, MessageSquare, Zap, BarChart, Shield, Globe } from 'lucide-react'
+import { Search, MessageSquare, BarChart, Zap, Star, Globe } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface NavItem {
@@ -56,8 +56,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'ConvoFlow',
-  tagline: 'Validate your SaaS idea with real human conversations, not assumptions',
-  description: 'AI-powered validation engine that guides founders from idea to go/no-go verdict using real human conversations.',
+  tagline: 'Stop validating with AI hallucinations. Talk to real humans.',
+  description: 'A conversational research engine that helps founders validate SaaS ideas with real human signal, not AI guesses.',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   company: 'ConvoFlow',
 
@@ -65,61 +65,61 @@ export const siteConfig: SiteConfig = {
     { title: 'Features', href: '/features' },
     { title: 'Pricing', href: '/pricing' },
     { title: 'How It Works', href: '/features#how-it-works' },
-    { title: 'Blog', href: '/blog' }
+    { title: 'FAQ', href: '/pricing#faq' }
   ],
 
   dashboardNav: [
     { title: 'Dashboard', href: '/dashboard' },
     { title: 'Projects', href: '/dashboard/entities' },
-    { title: 'Reports', href: '/dashboard/reports' },
-    { title: 'Settings', href: '/dashboard/settings' }
+    { title: 'Templates', href: '/dashboard/templates' },
+    { title: 'Reports', href: '/dashboard/reports' }
   ],
 
   hero: {
-    badge: 'Stop building things nobody wants',
-    headline: 'Validate Your SaaS Idea with Real Human Conversations',
-    headlineHighlight: 'Real Human Conversations',
-    subheadline: 'ConvoFlow guides you from idea to validated go/no-go verdict in 4 steps. Discover where your audience hangs out, get platform-specific conversation templates, paste in real responses, and let AI analyze everything into a confidence-scored validation verdict. No more guesswork. No more synthetic research.',
+    badge: 'Real Signal from Real Humans',
+    headline: 'Validate Your SaaS Idea with Real Conversations',
+    headlineHighlight: 'Real Conversations',
+    subheadline: 'Stop building things nobody wants. ConvoFlow guides you from idea to validation verdict in 4 steps — discover where your audience lives, get conversation templates optimized for each platform, paste back real responses, and get an AI-powered verdict with confidence scoring.',
     primaryCta: { text: 'Start Validating Free', href: '/register' },
-    secondaryCta: { text: 'See How It Works', href: '/features#how-it-works' },
+    secondaryCta: { text: 'See How It Works', href: '/features' },
     socialProof: { text: 'Trusted by 1,200+ indie hackers and founders', rating: '4.9/5' },
   },
 
   features: [
     {
       icon: Search,
-      title: 'Audience Channel Discovery',
-      description: 'AI identifies the exact subreddits, X communities, Discord servers, and Indie Hackers groups where your target audience is most active — with subscriber counts and engagement scores.',
+      title: 'Smart Channel Discovery',
+      description: 'AI finds the exact subreddits, X communities, and Discord servers where your target audience hangs out — with subscriber counts and activity metrics.',
       gradient: 'from-violet-500 to-purple-500',
     },
     {
       icon: MessageSquare,
-      title: 'Platform-Specific Templates',
-      description: 'Get conversation templates tailored to each platform\'s culture and norms. No more getting flagged for spam on Reddit or ignored on Discord.',
+      title: 'Platform-Optimized Templates',
+      description: 'Get conversation scripts tailored to each platform\'s culture — Reddit\'s anti-spam norms, Twitter\'s threading format, Discord\'s community etiquette.',
       gradient: 'from-blue-500 to-cyan-500',
-    },
-    {
-      icon: Zap,
-      title: 'Opus-Powered Deep Analysis',
-      description: 'Paste in messy conversation threads from any platform. Claude Opus extracts pain levels, willingness to pay, key quotes, and detects cross-channel patterns automatically.',
-      gradient: 'from-amber-500 to-orange-500',
     },
     {
       icon: BarChart,
       title: 'Confidence-Scored Verdicts',
-      description: 'Get a clear go, weak signal, or no-go verdict with a confidence score — not just raw data. Finally translate messy human feedback into a build decision.',
-      gradient: 'from-emerald-500 to-green-500',
+      description: 'No more guessing. Get a clear Strong Signal, Moderate Signal, or Red Flag verdict backed by confidence percentages and supporting evidence.',
+      gradient: 'from-emerald-500 to-teal-500',
     },
     {
-      icon: Shield,
-      title: 'Anti-Confirmation Bias',
-      description: 'Our AI is designed to be brutally honest. It flags contradictions, highlights negative signals you might overlook, and tells you when your idea needs work.',
+      icon: Zap,
+      title: 'Cross-Channel Pattern Detection',
+      description: 'Analyze responses from Reddit, Twitter, and Discord together to spot convergent themes, contradictions, and breakthrough insights across communities.',
+      gradient: 'from-amber-500 to-orange-500',
+    },
+    {
+      icon: Star,
+      title: 'Willingness-to-Pay Extraction',
+      description: 'Distinguish between polite encouragement and genuine purchase intent. Our AI detects pricing signals in natural language so you know who would actually pay.',
       gradient: 'from-rose-500 to-pink-500',
     },
     {
       icon: Globe,
       title: 'Shareable Validation Reports',
-      description: 'Generate professional validation reports you can share with co-founders, advisors, or investors. Export to PDF, Notion, or Google Docs with one click.',
+      description: 'Generate professional reports with key quotes, data visualizations, and your validation verdict — share with co-founders, advisors, or investors via a unique link.',
       gradient: 'from-indigo-500 to-violet-500',
     }
   ],
@@ -128,7 +128,7 @@ export const siteConfig: SiteConfig = {
     { name: 'Next.js', color: 'bg-black text-white' },
     { name: 'Supabase', color: 'bg-emerald-600 text-white' },
     { name: 'Stripe', color: 'bg-purple-600 text-white' },
-    { name: 'Claude AI', color: 'bg-amber-600 text-white' },
+    { name: 'Claude AI', color: 'bg-orange-600 text-white' },
     { name: 'Tailwind CSS', color: 'bg-sky-600 text-white' }
   ],
 
@@ -139,7 +139,7 @@ export const siteConfig: SiteConfig = {
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
         { title: 'How It Works', href: '/features#how-it-works' },
-        { title: 'Changelog', href: '/blog' }
+        { title: 'Changelog', href: '/changelog' }
       ],
     },
     {

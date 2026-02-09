@@ -89,7 +89,9 @@ function DefaultLandingPage() {
             </div>
 
             <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl dark:text-white">
-              {hero.headline}
+              {hero.headline.endsWith(hero.headlineHighlight)
+                ? hero.headline.slice(0, -hero.headlineHighlight.length).trim()
+                : hero.headline}
               <span className={`block bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
                 {hero.headlineHighlight}
               </span>

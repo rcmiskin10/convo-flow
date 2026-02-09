@@ -25,8 +25,9 @@ export const pricingConfig: {
 
   defaultLimits: {
     channels: 2,
-    conversations: 5,
-    entities: 1
+    entities: 1,
+    responses: 10,
+    templates: 3
   },
 
   plans: [
@@ -37,16 +38,17 @@ export const pricingConfig: {
       price: { monthly: 0 },
       limits: {
         channels: 2,
-        conversations: 5,
-        entities: 1
+        entities: 1,
+        responses: 10,
+        templates: 3
       },
       features: [
         '1 active project',
-        'Up to 5 conversation threads',
-        'Basic AI analysis (Haiku-powered)',
-        'Channel discovery for Reddit + 1 platform',
+        'Channel discovery for 2 platforms',
+        '3 conversation templates',
+        'Analyze up to 10 responses',
         'Basic validation summary',
-        'Community support'
+        'Powered by Claude Sonnet'
       ],
       cta: 'Get Started Free',
     },
@@ -58,45 +60,50 @@ export const pricingConfig: {
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
         channels: -1,
-        conversations: -1,
-        entities: -1
+        entities: -1,
+        responses: -1,
+        templates: -1
       },
       features: [
-        'Unlimited projects',
-        'Unlimited conversation thread imports',
+        'Unlimited active projects',
+        'All platforms: Reddit, X, Discord, Indie Hackers, LinkedIn',
+        'Unlimited conversation templates',
+        'Unlimited response analysis',
         'Claude Opus-powered deep analysis',
         'Confidence-scored validation verdicts',
-        'Full channel discovery across all platforms',
-        'Cross-channel pattern detection',
         'Willingness-to-pay extraction',
+        'Cross-channel pattern detection',
+        'Bulk thread & conversation import',
         'Shareable validation reports',
         'Export to PDF, Notion, Google Docs',
-        'Historical project comparison',
-        'Priority email support'
+        'Project history & idea comparison'
       ],
       highlighted: true,
       cta: 'Start Pro — 7 Day Free Trial',
     },
     {
-      id: 'lifetime',
-      name: 'Lifetime',
-      description: 'One-time payment, forever access — limited to 500 seats',
-      price: { monthly: 249 },
-      priceId: process.env.STRIPE_PRICE_LIFETIME,
+      id: 'team',
+      name: 'Team',
+      description: 'For startup studios, accelerators, and product consultants',
+      price: { monthly: 79, yearly: 690 },
+      priceId: process.env.STRIPE_PRICE_TEAM,
       limits: {
         channels: -1,
-        conversations: -1,
-        entities: -1
+        entities: -1,
+        responses: -1,
+        templates: -1
       },
       features: [
-        'Everything in Pro, forever',
-        'Unlimited projects & analyses',
-        'All future features included',
-        'Early access to new capabilities',
-        'Founding member badge',
-        'Direct founder access via Discord'
+        'Everything in Pro',
+        'Up to 5 team members',
+        'White-label validation reports',
+        'Custom branding on shared reports',
+        'Priority analysis queue',
+        'API access',
+        'Dedicated support channel',
+        'Team analytics dashboard'
       ],
-      cta: 'Grab Lifetime Deal',
+      cta: 'Contact Us',
     }
   ],
 }
